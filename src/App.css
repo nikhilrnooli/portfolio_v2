@@ -21,14 +21,23 @@
 body {
   background-color: var(--background-color);
   display: flex;
-  justify-content: center;
-  margin: 0 auto 60px;
+  flex-direction: column;
+  justify-content: flex-start; /* Ensures content starts from top */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Centers text globally */
+  min-height: 100vh; /* Ensures full height */
 }
 
 #root {
   display: flex;
   flex-direction: column;
   gap: 60px;
+  align-items: center;
+  justify-content: flex-start; /* Starts content from the top */
+  width: 100%;
+  flex-grow: 1; /* Ensures root takes up all available space */
 }
 
 h1,
