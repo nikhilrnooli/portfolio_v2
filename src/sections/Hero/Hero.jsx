@@ -1,7 +1,5 @@
 import styles from './HeroStyles.module.css';
 import heroImg from '../../assets/Design uten navn.png';
-import sun from '../../assets/sun.svg';
-import moon from '../../assets/moon.svg';
 import twitterLight from '../../assets/twitter-light.svg';
 import twitterDark from '../../assets/twitter-dark.svg';
 import githubLight from '../../assets/github-light.svg';
@@ -12,28 +10,19 @@ import CV from '../../assets/Resume.pdf';
 import { useTheme } from '../../common/ThemeContext';
 
 function Hero() {
-  const { theme, toggleTheme } = useTheme();
-
-  const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
-  const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
+  const { theme } = useTheme(); // Removed toggleTheme
+  const twitterIcon = twitterLight;
+  const githubIcon = githubLight;
+  const linkedinIcon = linkedinLight;
+  
 
   return (
     <section id="hero" className={styles.container}>
-      <div className={styles.colorModeContainer}>
-        <img
-          src={heroImg}
-          className={styles.hero}
-          alt="Profile picture of Nikhil Nooli"
-        />
-        <img
-          className={styles.colorMode}
-          src={themeIcon}
-          alt="Color mode icon"
-          onClick={toggleTheme}
-        />
-      </div>
+      <img
+        src={heroImg}
+        className={styles.hero}
+        alt="Profile picture of Nikhil Nooli"
+      />
       <div className={styles.info}>
         <h1>
           Nikhil
